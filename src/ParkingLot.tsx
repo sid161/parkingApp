@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 
 import { Navigate } from "react-router-dom"
 class ParkingLot extends React.Component {
+   
   static contextType = ParkingContext;
 
   state = {
@@ -27,28 +28,24 @@ class ParkingLot extends React.Component {
   handleCarRegistration = (e) => {
     const { setCarNo, parkingLot, setParkingLot } = this.context;
     e.preventDefault();
-    setCarNo(this.state.carNo);
-    let freeParkingLot = parkingLot.filter(
+    // setCarNo(this.state.carNo);
+    let freeParkingLot = parkingLot?.filter(
       (parkingSlot: any) => parkingSlot.empty === true
     );
-    if(freeParkingLot.length === 0){
+    if(freeParkingLot?.length === 0){
       return this.toastMessage()
     } 
-    let parkingSlot = this.getRandomIntInclusive(0, freeParkingLot.length - 1);
+    let selectedParkingSlotNumber = this.getRandomIntInclusive(0, freeParkingLot.length - 1);
     //selected parking slot number
-    let selectedParkingSlotNumber  = freeParkingLot[parkingSlot].parkingSlotNumber
-    // console.log(selectedParkingSlotNumber);
 
     // to find index of selected slot number in parkinglot[]
-      let requiredIndex = parkingLot.findIndex((parkingSlot:any,i)=> parkingSlot.parkingSlotNumber === selectedParkingSlotNumber)
-      console.log(requiredIndex);
+      let requiredIndex = parkingLot?.findIndex((parkingSlot:any,i)=> parkingSlot.parkingSlotNumber === selectedParkingSlotNumber)
     parkingLot[requiredIndex] = {
       empty: false,
       parkingSlotNumber: parkingLot[requiredIndex].parkingSlotNumber,
       carNo: this.state.carNo,
       time: new Date(),
     };
-    console.log(parkingLot[requiredIndex].parkingSlotNumber);
     setParkingLot(parkingLot);
     };
 
@@ -65,40 +62,10 @@ class ParkingLot extends React.Component {
 
     return (
       <>
-      <div
-        style={{
-          display: "inline-flex",
-          border: "1px solid grey",
-          flexWrap: "wrap",
-        }}
-      >
-        {parkingLot.map((parkingSlot: any) => {
-          return (
-            <div
-              key={parkingSlot.parkingSlotNumber}
-              className={parkingSlot.empty ? "green" : "red"}
-              style={{
-                padding: "1rem",
-                color: "white",
-                margin: "1rem",
-              }}
-              // onclick function to navigate and move to detail page
-              onClick = {() =>this.handleNavigate(parkingSlot)}
-            >
-              <div style={{display:"flex",flexDirection:"column"}}>
-              <div>Parking Slot Number : {parkingSlot.parkingSlotNumber}</div>
-              <div>Car No: {parkingSlot.carNo} </div>
-
-              <div>Time: {parkingSlot.time && parkingSlot.time.getHours() + ':' + parkingSlot.time.getMinutes()}</div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-          <form onSubmit={this.handleCarRegistration}>
+       <form data-testid="parking-drawing-add-car-button" onSubmit={this.handleCarRegistration}>
             <label style={{fontSize:"20px"}}> Please Enter Car registration number</label>
             <input
+            data-testid = "parking-drawing-registration-input"
             style={{padding:"15px",borderRadius:"20px", marginRight:"10px"}}
               onChange={(e) => {
                 this.setState({
@@ -110,6 +77,40 @@ class ParkingLot extends React.Component {
             />
              <Button type="submit" variant="contained">Submit</Button>
           </form>
+      <div
+        style={{
+          display: "inline-flex",
+          border: "1px solid grey",
+          flexWrap: "wrap",
+        }}
+      >
+        {parkingLot?.map((parkingSlot: any) => {
+          return (
+            <div
+              key={parkingSlot.parkingSlotNumber}
+              data-testid = "navigate-btn"
+             
+              style={{
+                padding: "1rem",
+                color: "white",
+                margin: "1rem",
+                backgroundColor:parkingSlot.empty ? "green" :"red"
+              }}
+              // onclick function to navigate and move to detail page
+              onClick = {() =>this.handleNavigate(parkingSlot)}
+            >
+              <div style={{display:"flex",flexDirection:"column"}}>
+              <div>Parking Slot Number : {parkingSlot?.parkingSlotNumber}</div>
+              <div>Car No: {parkingSlot?.carNo} </div>
+
+              <div>Time: {parkingSlot?.time && parkingSlot?.time.getHours() + ':' + parkingSlot?.time.getMinutes()}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+         
         {this.state.redirect && <Navigate to='/parking-details' replace={true} />}
 
         </div>

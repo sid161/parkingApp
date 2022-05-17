@@ -1,7 +1,7 @@
 import React from "react";
 import ParkingLot from "./ParkingLot";
 import ParkingContext from "./ParkingContext";
-import "./App.css";
+
 import { Navigate } from "react-router-dom"
 import Button from '@mui/material/Button';
 
@@ -15,7 +15,7 @@ class Parking extends React.Component {
 
 
   render() {
-    const { showParkingLot, setShowParkingLot, setParkingLot } = this.context;
+    const {  setParkingLot } = this.context;
 
     return (
       <div>
@@ -24,14 +24,12 @@ class Parking extends React.Component {
         data-testid="parking-create-submit-button"
           onSubmit={(e) => {
             e.preventDefault();
-            setShowParkingLot(true);
-
-            let noOfParkingSpacesArray = Array.from(
+         let noOfParkingSpacesArray = Array.from(
               { length: Number(this.state.input) },
               (_v, i) => i + 1
             );
             setParkingLot(
-              noOfParkingSpacesArray.map((number) => {
+              noOfParkingSpacesArray?.map((number) => {
                 return {
                   empty: true,
                   parkingSlotNumber: number,

@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652246408521" clover="3.2.0">
-  <project timestamp="1652246408522" name="All files">
-    <metrics statements="25" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="10" coveredmethods="1" elements="37" coveredelements="7" complexity="0" loc="25" ncloc="25" packages="1" files="3" classes="3"/>
-    <file name="App.css" path="C:\Users\extwe\OneDrive\Desktop\assignments\parking\src\App.css">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-    </file>
+<coverage generated="1652728238391" clover="3.2.0">
+  <project timestamp="1652728238391" name="All files">
+    <metrics statements="87" coveredstatements="41" conditionals="24" coveredconditionals="11" methods="32" coveredmethods="10" elements="143" coveredelements="62" complexity="0" loc="87" ncloc="87" packages="1" files="4" classes="4"/>
     <file name="Parking.tsx" path="C:\Users\extwe\OneDrive\Desktop\assignments\parking\src\Parking.tsx">
-      <metrics statements="12" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="1"/>
+      <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
       <line num="9" count="1" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="18" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="18" count="5" type="stmt"/>
+      <line num="20" count="5" type="stmt"/>
       <line num="26" count="0" type="stmt"/>
       <line num="27" count="0" type="stmt"/>
       <line num="29" count="0" type="stmt"/>
       <line num="31" count="0" type="stmt"/>
       <line num="33" count="0" type="stmt"/>
-      <line num="35" count="0" type="stmt"/>
-      <line num="41" count="0" type="stmt"/>
-      <line num="48" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="46" count="1" type="stmt"/>
     </file>
     <file name="ParkingContext.tsx" path="C:\Users\extwe\OneDrive\Desktop\assignments\parking\src\ParkingContext.tsx">
       <metrics statements="13" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <line num="3" count="1" type="stmt"/>
+      <line num="3" count="3" type="stmt"/>
       <line num="6" count="0" type="stmt"/>
       <line num="13" count="0" type="stmt"/>
       <line num="14" count="0" type="stmt"/>
@@ -35,6 +31,75 @@
       <line num="29" count="0" type="stmt"/>
       <line num="30" count="0" type="stmt"/>
       <line num="31" count="0" type="stmt"/>
+    </file>
+    <file name="ParkingDetails.tsx" path="C:\Users\extwe\OneDrive\Desktop\assignments\parking\src\ParkingDetails.tsx">
+      <metrics statements="33" coveredstatements="22" conditionals="12" coveredconditionals="5" methods="11" coveredmethods="4"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="5" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="26" count="5" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="37" count="5" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="49" count="5" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="57" count="5" type="stmt"/>
+      <line num="60" count="5" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="65" count="5" type="cond" truecount="1" falsecount="1"/>
+      <line num="66" count="5" type="cond" truecount="1" falsecount="1"/>
+      <line num="70" count="5" type="stmt"/>
+      <line num="71" count="5" type="stmt"/>
+      <line num="73" count="5" type="stmt"/>
+      <line num="74" count="5" type="stmt"/>
+      <line num="76" count="5" type="stmt"/>
+      <line num="77" count="5" type="stmt"/>
+      <line num="78" count="5" type="stmt"/>
+      <line num="82" count="5" type="cond" truecount="2" falsecount="2"/>
+      <line num="90" count="5" type="stmt"/>
+      <line num="102" count="1" type="stmt"/>
+      <line num="103" count="0" type="stmt"/>
+      <line num="105" count="0" type="stmt"/>
+    </file>
+    <file name="ParkingLot.tsx" path="C:\Users\extwe\OneDrive\Desktop\assignments\parking\src\ParkingLot.tsx">
+      <metrics statements="30" coveredstatements="13" conditionals="10" coveredconditionals="5" methods="11" coveredmethods="4"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="11" count="9" type="stmt"/>
+      <line num="17" count="9" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="24" count="9" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="28" count="9" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="36" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+      <line num="53" count="9" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="57" count="0" type="stmt"/>
+      <line num="61" count="9" type="stmt"/>
+      <line num="63" count="9" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="88" count="2" type="stmt"/>
+      <line num="100" count="0" type="stmt"/>
+      <line num="126" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>

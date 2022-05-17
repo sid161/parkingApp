@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">45.45% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>5/11</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">45.45% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>5/11</span>
             </div>
         
             
@@ -126,9 +126,7 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,7 +135,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,17 +143,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -175,7 +171,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,7 +192,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
 import ParkingLot from "./ParkingLot";
 import ParkingContext from "./ParkingContext";
-import "./App.css";
+&nbsp;
 import { Navigate } from "react-router-dom"
 import Button from '@mui/material/Button';
 &nbsp;
@@ -210,7 +206,7 @@ class Parking extends React.Component {
 &nbsp;
 &nbsp;
   render() {
-    const { showParkingLot, setShowParkingLot, setParkingLot } = this.context;
+    const {  setParkingLot } = this.context;
 &nbsp;
     return (
       &lt;div&gt;
@@ -219,14 +215,12 @@ class Parking extends React.Component {
         data-testid="parking-create-submit-button"
           onSubmit={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >            e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >            setShowParkingLot(true);</span>
-&nbsp;
-            let noOfParkingSpacesArray = <span class="cstat-no" title="statement not covered" >Array.from(</span>
+         let noOfParkingSpacesArray = <span class="cstat-no" title="statement not covered" >Array.from(</span>
               { length: Number(this.state.input) },
 <span class="fstat-no" title="function not covered" >              (_</span>v, i) =&gt; <span class="cstat-no" title="statement not covered" >i + 1</span>
             );
 <span class="cstat-no" title="statement not covered" >            setParkingLot(</span>
-              noOfParkingSpacesArray.map(<span class="fstat-no" title="function not covered" >(n</span>umber) =&gt; {
+              noOfParkingSpacesArray?.map(<span class="fstat-no" title="function not covered" >(n</span>umber) =&gt; {
 <span class="cstat-no" title="statement not covered" >                return {</span>
                   empty: true,
                   parkingSlotNumber: number,
@@ -239,8 +233,8 @@ class Parking extends React.Component {
           &lt;label style={{fontSize:"20px"}}&gt;Please enter no of spaces in parking lot&lt;/label&gt;
           &lt;input
           style={{padding:"15px",borderRadius:"20px", marginRight:"10px"}}
-            onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
-<span class="cstat-no" title="statement not covered" >              this.setState({</span>
+            onChange={(e) =&gt; {
+              this.setState({
                 input: e.target.value,
               });
             }}
@@ -265,7 +259,7 @@ export default Parking;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed May 11 2022 10:50:08 GMT+0530 (India Standard Time)
+                at Tue May 17 2022 00:40:38 GMT+0530 (India Standard Time)
             </div>
         <script src="prettify.js"></script>
         <script>
